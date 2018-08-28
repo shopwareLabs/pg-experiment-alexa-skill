@@ -1,0 +1,11 @@
+{
+  "name": "alexa-skill-shopware",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "ask-sdk": "^2.0.0",
+    "axios": "^0.18.0",
+    "i18next": "^11.6.0",
+    "i18next-sprintf-postprocessor": "^0.2.2"
+  }
+}

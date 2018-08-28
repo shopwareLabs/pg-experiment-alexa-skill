@@ -1,0 +1,164 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "shopware",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "SearchIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "nach {product} suchen",
+            "suche nach {product}",
+            "finde artikel {product}",
+            "finde produkt {product}",
+            "suche artikel {product}",
+            "suche produkt {product}",
+            "finde {product}",
+            "suche {product}",
+            "durchsuche {product}"
+          ]
+        },
+        {
+          "name": "OrderStateIntent",
+          "slots": [],
+          "samples": [
+            "nach dem Status der letzten Bestellung",
+            "Wie weit ist meine letzte Bestellung",
+            "Wie weit ist meine Bestellung",
+            "Wie steht es um meine letzte Bestellung",
+            "Wie steht es um meine Bestellung",
+            "Wie ist der Status meiner letzten Bestellung",
+            "Wie ist der Status meiner Bestellung"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "ProductDetailsIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "Sage mir mehr zu {product}",
+            "nenne mir Details zu {product}"
+          ]
+        },
+        {
+          "name": "DetailsIntent",
+          "slots": [],
+          "samples": [
+            "nenne mir details",
+            "erzähl mir mehr dazu",
+            "Erzähl mir mehr"
+          ]
+        },
+        {
+          "name": "NewsIntent",
+          "slots": [],
+          "samples": [
+            "Was sind die Neuheiten",
+            "Was ist neu",
+            "Was gibt es neues"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SearchIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.549667743274.194293401936"
+              }
+            }
+          ]
+        },
+        {
+          "name": "OrderStateIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        },
+        {
+          "name": "ProductDetailsIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.884581009622.103632773948"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.549667743274.194293401936",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Wonach soll ich suchen?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Welchen Artikel meinst du?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Wonach willst du suchen?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.884581009622.103632773948",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Wovon möchtest du die Details wissen?"
+          }
+        ]
+      }
+    ]
+  }
+}

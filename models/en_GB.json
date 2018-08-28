@@ -1,0 +1,159 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "shopware",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "SearchIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "Search for {product}",
+            "Search {product}",
+            "Find product {product}",
+            "Find article {product}",
+            "Search article {product}",
+            "Search product {product}",
+            "Find {product}",
+            "Look for {product}"
+          ]
+        },
+        {
+          "name": "OrderStateIntent",
+          "slots": [],
+          "samples": [
+            "by last order state",
+            "where is my recent order",
+            "where is my order",
+            "which state has my last order"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "ProductDetailsIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "Tell me more to {product}",
+            "More information to {product}"
+          ]
+        },
+        {
+          "name": "DetailsIntent",
+          "slots": [],
+          "samples": [
+            "Tell me details",
+            "Tell me more"
+          ]
+        },
+        {
+          "name": "NewsIntent",
+          "slots": [],
+          "samples": [
+            "Latest arrivals",
+            "Which products are new",
+            "Which is new"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "SearchIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.549667743274.194293401936"
+              }
+            }
+          ]
+        },
+        {
+          "name": "OrderStateIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": []
+        },
+        {
+          "name": "ProductDetailsIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "product",
+              "type": "AMAZON.SearchQuery",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.884581009622.103632773948"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.549667743274.194293401936",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What should I look for?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Which product do you mean?"
+          },
+          {
+            "type": "PlainText",
+            "value": "For what product are you looking for?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.884581009622.103632773948",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "From which product do you want more information?"
+          }
+        ]
+      }
+    ]
+  }
+}
