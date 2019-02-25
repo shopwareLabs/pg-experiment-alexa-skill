@@ -12,7 +12,7 @@ module.exports = {
         const requestAttributes = attributesManager.getRequestAttributes();
         const request = requestEnvelope.request;
 
-        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, '/storefront-api/customer/orders?limit=1');
+        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, '/storefront-api/v1/customer/order?limit=1');
 
         let order = null;
         let response = await axios(options);

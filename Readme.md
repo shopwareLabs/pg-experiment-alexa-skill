@@ -23,7 +23,7 @@
   - client authentication scheme: `HTTP Basic (Recommended)`
 
 ## Configure lambda/constants.js
-- Set the BASE_URL to your playground instance (e.g. `https://pg.shopware.com`)
+- Set the BASE_URL to your playground instance (e.g. `pg.shopware.com`)
 
 ## Create lambda function
 - Login to your AWS Account

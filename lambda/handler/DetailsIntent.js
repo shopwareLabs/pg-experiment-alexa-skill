@@ -21,7 +21,7 @@ module.exports = {
         const sessionAttributes = attributesManager.getSessionAttributes();
         const requestAttributes = attributesManager.getRequestAttributes();
 
-        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/product/${sessionAttributes.placeOrderWithProductId}`);
+        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/v1/product/${sessionAttributes.placeOrderWithProductId}`);
 
         const response = await axios(options);
         const product = response.data.data;

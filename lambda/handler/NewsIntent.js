@@ -11,7 +11,7 @@ module.exports = {
         const { attributesManager, responseBuilder, requestEnvelope } = handlerInput;
         const requestAttributes = attributesManager.getRequestAttributes();
 
-        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/product?sort=-createdAt&limit=5`);
+        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/v1/product?sort=-createdAt&limit=5`);
 
         const response = await axios(options);
         let products = response.data.data;

@@ -29,7 +29,7 @@ module.exports = {
                     break;
                 }
 
-                const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/product?term=${sessionAttributes.searchForProductTerm}&limit=1&page=${sessionAttributes.productOffset}`);
+                const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/v1/product?term=${sessionAttributes.searchForProductTerm}&limit=1&page=${sessionAttributes.productOffset}`);
 
                 const response = await axios(options);
                 const product = response.data.data[0];

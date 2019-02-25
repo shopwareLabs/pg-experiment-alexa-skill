@@ -26,10 +26,10 @@ module.exports = {
         sessionAttributes.placeOrderWithProductId = false;
         sessionAttributes.searchForProductTerm = false;
 
-        options.url = `/storefront-api/checkout/cart/product/${productId}`;
+        options.url = `/storefront-api/v1/checkout/cart/product/${productId}`;
         await axios(options);
 
-        options.url = '/storefront-api/checkout/order';
+        options.url = '/storefront-api/v1/checkout/order';
         axios(options);
         responseBuilder.speak(requestAttributes.t('ORDERHASBEENPLACED')).withShouldEndSession(true);
 
