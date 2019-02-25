@@ -15,7 +15,7 @@ module.exports = {
         const productSearchTerm = requestEnvelope.request.intent.slots.product.value;
         sessionAttributes.searchForProductTerm = productSearchTerm;
 
-        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/product?term=${productSearchTerm}&limit=1`);
+        const options = requestHelper.getOptions(requestEnvelope.session.user.accessToken, `/storefront-api/v1/product?term=${productSearchTerm}&limit=1`);
 
         const response = await axios(options);
         const product = response.data.data[0];

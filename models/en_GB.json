@@ -31,7 +31,8 @@
             "Search article {product}",
             "Search product {product}",
             "Find {product}",
-            "Look for {product}"
+            "Look for {product}",
+            "Buy {product}"
           ]
         },
         {

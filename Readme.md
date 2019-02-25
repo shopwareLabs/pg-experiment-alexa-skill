@@ -2,7 +2,7 @@
 ## Requirements 
 - Amazon developer account
 - AWS Account
-- SwagOAuth plugin [TODO]
+- Playground instance (https://playground.shopware.com/)
 
 ## Create a new Skill
 - Login to Amazon developer Account
@@ -11,7 +11,19 @@
 - Enter skill name, default language
 - Goto the JSON-Editor `https://developer.amazon.com/alexa/console/ask/build/custom/{SKILLID}/development/{LANGUAGE}/json-editor`
 - Paste model of you language 
-- Configure Account Linking (see [SwagOAuth])
+- Configure Account Linking
+  - Login to your playground instance
+  - create an integration
+  - back in the amazon account
+  - Authorization grant type: `Auth code grant`
+  - Authorization URI: `{URL-TO-YOUR-PLAYGROUND}/customer/oauth/authorize`
+  - Access Token URI: `{URL-TO-YOUR-PLAYGROUND}/customer/oauth/token`
+  - client id: `Access key ID` of the new created integration
+  - client secret: `Secret access key` of the new created integration
+  - client authentication scheme: `HTTP Basic (Recommended)`
+
+## Configure lambda/constants.js
+- Set the BASE_URL to your playground instance (e.g. `pg.shopware.com`)
 
 ## Create lambda function
 - Login to your AWS Account
@@ -28,6 +40,3 @@
 - zip the content of the lambda folder `cd lambda; zip -X -r Skill.zip *`
 - upload the zip 
 - Save
-
-## Configure constants.js
-- Set the BASE_URL to your instance (e.g. `pg.shopware.com`)
